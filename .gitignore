@@ -1,0 +1,28 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build & caches
+dist/
+build/
+.next/
+out/
+.cache/
+*.log
+
+# IDE
+.idea/
+*.swp
+*.swo
