@@ -1,0 +1,21 @@
+/** Acid green–yellow palette */
+export const theme = {
+  primary: "#CCFF00",
+  primaryHover: "#E5FF4D",
+  primaryPressed: "#A8D900",
+  secondary: "#39FF14",
+  primaryDeep: "#5A8010",
+  background: "#0A0F08",
+  backgroundElevated: "#111A0D",
+  surface1: "#182012",
+  surface2: "#1F2A18",
+  textPrimary: "#F4FFE8",
+  textSecondary: "rgba(244, 255, 232, 0.78)",
+  textTertiary: "rgba(244, 255, 232, 0.52)",
+  border: "rgba(204, 255, 0, 0.1)",
+  success: "#39FF14",
+  error: "#FF5F52",
+  radiusSm: 12,
+  radiusLg: 24,
+  radiusXl: 24,
+} as const;

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="tinyBig TB">
+  <defs>
+    <linearGradient id="acid" x1="72" y1="56" x2="440" y2="456" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#39ff14"/>
+      <stop offset="48%" stop-color="#ccff00"/>
+      <stop offset="100%" stop-color="#ffe600"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#39ff14" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#ccff00" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0a0f08" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="round">
+      <rect width="512" height="512" rx="112"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="512" height="512" fill="#0a0f08"/>
+    <rect width="512" height="512" fill="url(#halo)"/>
+
+    <circle
+      cx="256"
+      cy="256"
+      r="188"
+      fill="#111a0d"
+      stroke="url(#acid)"
+      stroke-width="4"
+      opacity="0.95"
+    />
+
+    <g filter="url(#glow)">
+      <!-- T -->
+      <path
+        fill="url(#acid)"
+        d="M 108 148 H 248 V 196 H 188 V 364 H 168 V 196 H 108 Z"
+      />
+      <!-- B -->
+      <path
+        fill="url(#acid)"
+        fill-rule="evenodd"
+        d="
+          M 268 148 H 312 V 364 H 268 V 148 Z
+          M 312 148 H 356
+          C 404 148 428 172 428 210
+          C 428 238 408 258 376 264
+          C 412 272 436 298 436 336
+          C 436 384 396 364 348 364
+          H 312 V 336 H 348
+          C 378 336 396 318 396 292
+          C 396 266 376 248 344 248
+          H 312 V 220 H 348
+          C 382 220 400 202 400 178
+          C 400 154 378 148 348 148
+          H 312 Z
+        "
+      />
+    </g>
+  </g>
+</svg>
