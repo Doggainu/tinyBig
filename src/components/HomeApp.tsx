@@ -83,6 +83,14 @@ export function HomeApp() {
 
       <div className="uni-card px-4 py-5">
         <ConnectWallet />
+        {hubReady && isConnected && !wrongChain && (
+          <div className="uni-card-inset mt-2.5 flex items-center justify-between gap-2 px-3 py-2">
+            <p className="uni-label shrink-0 leading-none">Total points</p>
+            <p className="uni-mono text-lg font-semibold leading-none uni-text-accent">
+              {points?.toString() ?? "0"}
+            </p>
+          </div>
+        )}
       </div>
 
       {wrongChain && (
@@ -94,15 +102,6 @@ export function HomeApp() {
         >
           {isSwitching ? "Switching…" : "Switch to Base"}
         </button>
-      )}
-
-      {hubReady && isConnected && !wrongChain && (
-        <div className="uni-card px-4 py-3 text-center">
-          <p className="uni-label">Total points</p>
-          <p className="uni-mono mt-1 text-2xl font-semibold uni-text-accent">
-            {points?.toString() ?? "0"}
-          </p>
-        </div>
       )}
 
       {hubReady && isConnected && !wrongChain && (
