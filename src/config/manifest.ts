@@ -54,16 +54,6 @@ export function buildFarcasterManifest() {
   return {
     accountAssociation: FARCASTER_ACCOUNT_ASSOCIATION,
     miniapp: metadata,
-    frame: {
-      version: metadata.version,
-      name: metadata.name,
-      iconUrl: metadata.iconUrl,
-      homeUrl: metadata.homeUrl,
-      imageUrl: metadata.imageUrl,
-      buttonTitle: metadata.buttonTitle,
-      splashImageUrl: metadata.splashImageUrl,
-      splashBackgroundColor: metadata.splashBackgroundColor,
-      webhookUrl: metadata.webhookUrl,
-    },
+    frame: metadata,
   };
 }
