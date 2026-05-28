@@ -1,4 +1,4 @@
-# tinyBig   1
+# tinyBig   12
 
 Base mini app: GM, token deploy, referral points, and milestone badge NFTs.
 
