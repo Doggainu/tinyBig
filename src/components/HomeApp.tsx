@@ -13,6 +13,7 @@ import { DeployPanel } from "@/components/DeployPanel";
 import { GmPanel } from "@/components/GmPanel";
 import {
   DEPLOY_CHAIN_ID,
+  BOOST_GM_MULTIPLIER,
   isContractConfigured,
 } from "@/config/contract";
 import { POINTS_PER_REFERRAL } from "@/config/referral";
@@ -108,13 +109,20 @@ export function HomeApp() {
       {hubReady && isConnected && !wrongChain && (
         <div className="uni-card p-4">
           <div className="uni-tabs mb-4">
-            <button
-              type="button"
-              className={`uni-tab ${tab === "gm" ? "uni-tab-active" : ""}`}
-              onClick={() => setTab("gm")}
-            >
-              GM
-            </button>
+            <div className="uni-tab-wrap">
+              <button
+                type="button"
+                className={`uni-tab ${tab === "gm" ? "uni-tab-active" : ""}`}
+                onClick={() => setTab("gm")}
+              >
+                GM
+              </button>
+              {boostActive && (
+                <span className="uni-tab-2x-badge" aria-hidden>
+                  {BOOST_GM_MULTIPLIER}×
+                </span>
+              )}
+            </div>
             <div
               className={`uni-tab-boost-ring ${boostActive ? "uni-tab-boost-ring--live" : ""}`}
             >
@@ -126,13 +134,20 @@ export function HomeApp() {
                 Boost
               </button>
             </div>
-            <button
-              type="button"
-              className={`uni-tab ${tab === "deploy" ? "uni-tab-active" : ""}`}
-              onClick={() => setTab("deploy")}
-            >
-              Deploy
-            </button>
+            <div className="uni-tab-wrap">
+              <button
+                type="button"
+                className={`uni-tab ${tab === "deploy" ? "uni-tab-active" : ""}`}
+                onClick={() => setTab("deploy")}
+              >
+                Deploy
+              </button>
+              {boostActive && (
+                <span className="uni-tab-2x-badge" aria-hidden>
+                  {BOOST_GM_MULTIPLIER}×
+                </span>
+              )}
+            </div>
           </div>
 
           {tab === "gm" ? (

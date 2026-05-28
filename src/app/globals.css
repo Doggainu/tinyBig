@@ -426,6 +426,52 @@ a.uni-tab.uni-tab-active {
 }
 
 /* Boost tab — rotating conic border when 2× boost is active on-chain */
+.uni-tab-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+}
+
+.uni-tab-wrap .uni-tab {
+  flex: 1;
+  width: 100%;
+}
+
+.uni-tab-2x-badge {
+  position: absolute;
+  top: -0.3125rem;
+  right: 0.125rem;
+  z-index: 2;
+  padding: 0.0625rem 0.3125rem;
+  border-radius: var(--uni-radius-pill);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: var(--uni-on-accent);
+  background: var(--uni-gradient-primary);
+  box-shadow: 0 2px 10px rgba(204, 255, 0, 0.45);
+  pointer-events: none;
+  animation: uni-2x-badge-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes uni-2x-badge-pulse {
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.1) translateY(-1px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uni-tab-2x-badge {
+    animation: none;
+  }
+}
+
 .uni-tab-boost-ring {
   flex: 1;
   min-width: 0;
