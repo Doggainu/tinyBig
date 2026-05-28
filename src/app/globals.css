@@ -425,6 +425,74 @@ a.uni-tab.uni-tab-active {
   box-shadow: var(--uni-shadow-glow);
 }
 
+/* Boost tab — rotating conic border when 2× boost is active on-chain */
+.uni-tab-boost-ring {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  border-radius: var(--uni-radius-pill);
+}
+
+.uni-tab-boost-ring .uni-tab {
+  flex: 1;
+  width: 100%;
+}
+
+.uni-tab-boost-ring--live {
+  position: relative;
+  padding: 2px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.uni-tab-boost-ring--live::before {
+  content: "";
+  position: absolute;
+  inset: -120%;
+  background: conic-gradient(
+    from 0deg,
+    #39ff14 0deg,
+    #ccff00 72deg,
+    #ffe600 144deg,
+    #39ff14 216deg,
+    #ccff00 288deg,
+    #39ff14 360deg
+  );
+  animation: uni-boost-ring-spin 2.8s linear infinite;
+  will-change: transform;
+}
+
+.uni-tab-boost-ring--live .uni-tab {
+  position: relative;
+  z-index: 1;
+  background: var(--uni-surface-2);
+}
+
+.uni-tab-boost-ring--live .uni-tab.uni-tab-active {
+  background: var(--uni-gradient-primary);
+  color: var(--uni-on-accent);
+  box-shadow: var(--uni-shadow-glow);
+}
+
+@keyframes uni-boost-ring-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uni-tab-boost-ring--live::before {
+    animation: none;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      #39ff14 0%,
+      #ccff00 50%,
+      #ffe600 100%
+    );
+  }
+}
+
 /* ── Badges page ── */
 .uni-badges-hero {
   position: relative;

@@ -42,6 +42,7 @@ export function HomeApp() {
     freeDeployAvailable,
     deployFeeOnChain,
     points,
+    boostActive,
     refreshStats,
   } = useHubStats();
 
@@ -114,13 +115,17 @@ export function HomeApp() {
             >
               GM
             </button>
-            <button
-              type="button"
-              className={`uni-tab ${tab === "boost" ? "uni-tab-active" : ""}`}
-              onClick={() => setTab("boost")}
+            <div
+              className={`uni-tab-boost-ring ${boostActive ? "uni-tab-boost-ring--live" : ""}`}
             >
-              Boost
-            </button>
+              <button
+                type="button"
+                className={`uni-tab ${tab === "boost" ? "uni-tab-active" : ""}`}
+                onClick={() => setTab("boost")}
+              >
+                Boost
+              </button>
+            </div>
             <button
               type="button"
               className={`uni-tab ${tab === "deploy" ? "uni-tab-active" : ""}`}
