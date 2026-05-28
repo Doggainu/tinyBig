@@ -21,10 +21,11 @@ export function AppNav() {
     <nav className="uni-card mb-3 flex items-center gap-2 px-3 py-2">
       <Link
         href="/"
-        className="flex shrink-0 items-center no-underline"
-        aria-label={APP_NAME}
+        className="uni-nav-brand-link flex shrink-0 items-center gap-2 border-r border-[var(--uni-border)] pr-3 no-underline"
+        aria-label={`${APP_NAME} home`}
       >
         <AppLogo size={32} />
+        <span className="uni-nav-brand">{APP_NAME}</span>
       </Link>
       <div className="uni-tabs uni-tabs-compact min-w-0 flex-1">
         {links.map((link) => {

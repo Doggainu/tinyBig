@@ -355,6 +355,23 @@ body {
 }
 
 /* ── Tabs (Jumper-style segmented control) ── */
+.uni-nav-brand-link {
+  transition: opacity 0.15s ease;
+}
+
+.uni-nav-brand-link:hover {
+  opacity: 0.92;
+}
+
+.uni-nav-brand {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--uni-text);
+  white-space: nowrap;
+}
+
 .uni-tabs {
   display: flex;
   gap: 0.25rem;
