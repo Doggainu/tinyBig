@@ -1,4 +1,4 @@
-# tinyBig   123456789012345678
+# tinyBig   1234567890123456789
 
 Base mini app: GM, token deploy, referral points, and milestone badge NFTs.
 
