@@ -11,12 +11,18 @@ import {
   getAppSplashUrl,
 } from "@/config/appAssets";
 
-/** Set after Farcaster domain verification for your production URL */
+/** Domain verified at https://tiny-big.vercel.app/.well-known/farcaster.json */
 export const FARCASTER_ACCOUNT_ASSOCIATION: {
   header: string;
   payload: string;
   signature: string;
-} | null = null;
+} = {
+  header:
+    "eyJmaWQiOjc3NzY4MywidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweEFiNGVlNzQ2Q0U1MGIwMzdGQWYwNWQ0MzE1YWZEMTM5ZTlFQmVCNDQifQ",
+  payload: "eyJkb21haW4iOiJ0aW55LWJpZy52ZXJjZWwuYXBwIn0",
+  signature:
+    "cndOfBAWhpqZsDPp0Jf7aHjp9hzfSclXKmg01fyrr/dAUVyC0nkzqTGqJQvhk5pu618z4s66JSx/Vj7gjZ20tRw=",
+};
 
 export const FARCASTER_BUTTON_TITLE = "Open app";
 export const FARCASTER_SPLASH_BACKGROUND_COLOR = "#0a0f08";
@@ -46,10 +52,18 @@ export function buildFarcasterManifest() {
   const metadata = buildMiniappMetadata(origin);
 
   return {
-    ...(FARCASTER_ACCOUNT_ASSOCIATION
-      ? { accountAssociation: FARCASTER_ACCOUNT_ASSOCIATION }
-      : {}),
+    accountAssociation: FARCASTER_ACCOUNT_ASSOCIATION,
     miniapp: metadata,
-    frame: metadata,
+    frame: {
+      version: metadata.version,
+      name: metadata.name,
+      iconUrl: metadata.iconUrl,
+      homeUrl: metadata.homeUrl,
+      imageUrl: metadata.imageUrl,
+      buttonTitle: metadata.buttonTitle,
+      splashImageUrl: metadata.splashImageUrl,
+      splashBackgroundColor: metadata.splashBackgroundColor,
+      webhookUrl: metadata.webhookUrl,
+    },
   };
 }
