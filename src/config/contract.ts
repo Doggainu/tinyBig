@@ -2,10 +2,10 @@ import { base } from "wagmi/chains";
 
 /** Set after deploying Hub.sol on Base */
 export const HUB_CONTRACT_ADDRESS: `0x${string}` =
-  "0x0000000000000000000000000000000000000000";
+  "0x9Bf7f86889CfddEb13440b938f092D2F224Aa803";
 
 /** Hub deploy block — set after first deploy (speeds up leaderboard indexing) */
-export const HUB_DEPLOY_FROM_BLOCK = 0n;
+export const HUB_DEPLOY_FROM_BLOCK = 46607705n;
 
 export const DEPLOY_CHAIN_ID = base.id;
 

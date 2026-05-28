@@ -32,6 +32,11 @@ npm run deploy:base      # Base mainnet
 
 After deploy, addresses sync into `src/config/contract.ts` and `src/config/badgeContract.ts`.
 
+### Deploy via Remix (manual, beginner-friendly)
+
+1. Upload files from `contracts/remix/` (Hub, BadgeNFT, SimpleToken).
+2. Follow **[docs/DEPLOY_REMIX.md](docs/DEPLOY_REMIX.md)** — step-by-step for Base mainnet.
+
 ## Before production
 
 1. Set `NEXT_PUBLIC_SITE_URL` in `.env.local` / Vercel

@@ -11,7 +11,8 @@
     "compile": "forge build",
     "test:contracts": "forge test",
     "deploy:sepolia": "bash scripts/deploy-contracts.sh base_sepolia",
-    "deploy:base": "bash scripts/deploy-contracts.sh base"
+    "deploy:base": "bash scripts/deploy-contracts.sh base",
+    "verify:base": "bash scripts/verify-base.sh"
   },
   "dependencies": {
     "@base-org/account": "^2.5.6",
