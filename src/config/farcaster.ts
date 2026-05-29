@@ -11,6 +11,10 @@ import {
 
 export const FARCASTER_APP_NAME = APP_NAME;
 
+/** Public mini app page on Farcaster (included in share casts) */
+export const FARCASTER_MINIAPP_URL =
+  "https://farcaster.xyz/miniapps/xp2Vq_wQfzor/tinybig";
+
 export function getSiteUrl() {
   return CANONICAL_SITE_URL;
 }

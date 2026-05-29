@@ -1,5 +1,6 @@
 import sdk from "@farcaster/frame-sdk";
 
+import { FARCASTER_MINIAPP_URL } from "@/config/farcaster";
 import {
   buildReferralShareCopy,
   buildReferralShareUrl,
@@ -40,7 +41,7 @@ export async function shareOnFarcaster(
 ): Promise<void> {
   const shareUrl = buildReferralShareUrl(referralCode);
   const { farcasterText } = buildReferralShareCopy(referralCode);
-  const embeds = [shareUrl] as [string];
+  const embeds = [FARCASTER_MINIAPP_URL, shareUrl] as [string, string];
 
   if (inMiniApp && typeof sdk.actions.composeCast === "function") {
     await sdk.actions.composeCast({ text: farcasterText, embeds });
