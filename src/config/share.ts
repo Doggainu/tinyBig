@@ -1,4 +1,4 @@
-import { APP_NAME } from "@/config/app";
+import { APP_NAME, PRODUCTION_SITE_URL } from "@/config/app";
 import { CANONICAL_SITE_URL } from "@/config/appAssets";
 import { POINTS_PER_REFERRAL } from "@/config/referral";
 
@@ -9,10 +9,22 @@ export type ReferralShareCopy = {
   xText: string;
 };
 
+/** Public URL for referral shares (never localhost) */
+export function getShareSiteOrigin(): string {
+  const canonical = CANONICAL_SITE_URL.replace(/\/$/, "");
+  if (
+    canonical.includes("localhost") ||
+    canonical.includes("127.0.0.1")
+  ) {
+    return PRODUCTION_SITE_URL.replace(/\/$/, "");
+  }
+  return canonical;
+}
+
 /** Opens referral page with code prefilled for friends */
 export function buildReferralShareUrl(
   code: string,
-  origin: string = CANONICAL_SITE_URL,
+  origin: string = getShareSiteOrigin(),
 ): string {
   const base = origin.replace(/\/$/, "");
   return `${base}/referral?code=${encodeURIComponent(code)}`;
