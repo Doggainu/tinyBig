@@ -131,7 +131,8 @@ export function HomeApp() {
                 className={`uni-tab ${tab === "boost" ? "uni-tab-active" : ""}`}
                 onClick={() => setTab("boost")}
               >
-                Boost
+                Boost{" "}
+                <span className="uni-tab-2x-mark">{BOOST_GM_MULTIPLIER}×</span>
               </button>
             </div>
             <div className="uni-tab-wrap">

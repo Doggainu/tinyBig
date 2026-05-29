@@ -527,23 +527,50 @@ a.uni-tab.uni-tab-active {
   }
 }
 
+.uni-tab-2x-mark {
+  font-weight: 700;
+  color: var(--uni-pink);
+}
+
 .uni-tab-boost-ring {
+  position: relative;
   flex: 1;
   min-width: 0;
   display: flex;
+  padding: 2px;
   border-radius: var(--uni-radius-pill);
+  background: linear-gradient(
+    135deg,
+    rgba(57, 255, 20, 0.7) 0%,
+    rgba(204, 255, 0, 0.55) 52%,
+    rgba(255, 230, 0, 0.45) 100%
+  );
+  box-shadow: 0 0 10px rgba(204, 255, 0, 0.2);
 }
 
 .uni-tab-boost-ring .uni-tab {
+  position: relative;
+  z-index: 1;
   flex: 1;
   width: 100%;
+  background: var(--uni-surface-2);
+}
+
+.uni-tab-boost-ring .uni-tab.uni-tab-active {
+  background: var(--uni-gradient-primary);
+  color: var(--uni-on-accent);
+  box-shadow: var(--uni-shadow-glow);
+}
+
+.uni-tab-boost-ring .uni-tab.uni-tab-active .uni-tab-2x-mark {
+  color: var(--uni-on-accent);
 }
 
 .uni-tab-boost-ring--live {
-  position: relative;
-  padding: 2px;
   overflow: hidden;
   isolation: isolate;
+  background: transparent;
+  box-shadow: 0 0 16px rgba(204, 255, 0, 0.35);
 }
 
 .uni-tab-boost-ring--live::before {
@@ -559,13 +586,11 @@ a.uni-tab.uni-tab-active {
     #ccff00 288deg,
     #39ff14 360deg
   );
-  animation: uni-boost-ring-spin 2.8s linear infinite;
+  animation: uni-boost-ring-spin 1.8s linear infinite;
   will-change: transform;
 }
 
 .uni-tab-boost-ring--live .uni-tab {
-  position: relative;
-  z-index: 1;
   background: var(--uni-surface-2);
 }
 
