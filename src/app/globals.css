@@ -439,6 +439,47 @@ a.uni-tab.uni-tab-active {
   box-shadow: var(--uni-shadow-glow);
 }
 
+/* Farm tab — tB label + soft pulse when not active */
+.uni-tab-tb-mark {
+  font-weight: 700;
+  color: var(--uni-pink);
+}
+
+.uni-tab-farm-pulse {
+  color: var(--uni-text-secondary);
+}
+
+.uni-tab-farm-pulse .uni-tab-tb-mark {
+  color: var(--uni-pink);
+}
+
+.uni-tab-farm-pulse:not(.uni-tab-active) {
+  animation: uni-farm-tab-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes uni-farm-tab-pulse {
+  0%,
+  100% {
+    color: var(--uni-text-secondary);
+    box-shadow: 0 0 0 transparent;
+  }
+  50% {
+    color: var(--uni-text);
+    box-shadow: 0 0 14px rgba(204, 255, 0, 0.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uni-tab-farm-pulse:not(.uni-tab-active) {
+    animation: none;
+    color: var(--uni-text);
+  }
+}
+
+.uni-tab-farm-pulse.uni-tab-active .uni-tab-tb-mark {
+  color: var(--uni-on-accent);
+}
+
 /* Boost tab — rotating conic border when 2× boost is active on-chain */
 .uni-tab-wrap {
   position: relative;

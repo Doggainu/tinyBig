@@ -8,7 +8,7 @@ import { APP_NAME } from "@/config/app";
 
 const links = [
   { href: "/", label: "App" },
-  { href: "/farm", label: "Farm" },
+  { href: "/farm", label: "Farm", highlight: true as const },
   { href: "/referral", label: "Refer" },
   { href: "/badges", label: "Badges" },
   { href: "/leaderboard", label: "Leaders" },
@@ -32,13 +32,22 @@ export function AppNav() {
             link.href === "/"
               ? pathname === "/"
               : pathname.startsWith(link.href);
+          const pulseFarm =
+            "highlight" in link && link.highlight && !active;
           return (
             <Link
               key={link.href}
               href={link.href}
-              className={`uni-tab ${active ? "uni-tab-active" : ""}`}
+              className={`uni-tab ${active ? "uni-tab-active" : ""} ${pulseFarm ? "uni-tab-farm-pulse" : ""}`}
             >
-              {link.label}
+              {"highlight" in link && link.highlight ? (
+                <>
+                  Farm{" "}
+                  <span className="uni-tab-tb-mark">tB</span>
+                </>
+              ) : (
+                link.label
+              )}
             </Link>
           );
         })}
