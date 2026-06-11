@@ -18,13 +18,13 @@ export function AppNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="uni-card mb-3 flex w-full items-center gap-2 px-2 py-2 sm:px-3">
+    <nav className="uni-card uni-nav-compact mb-2 flex w-full items-center gap-1.5 px-1.5 py-1">
       <Link
         href="/"
-        className="uni-nav-brand-link flex shrink-0 items-center border-r border-[var(--uni-border)] pr-2 no-underline sm:pr-2.5"
+        className="uni-nav-brand-link flex shrink-0 items-center border-r border-[var(--uni-border)] pr-1.5 no-underline"
         aria-label={`${APP_NAME} home`}
       >
-        <AppLogo size={32} />
+        <AppLogo size={26} />
       </Link>
       <div className="uni-tabs uni-tabs-compact min-w-0 flex-1 basis-0">
         {links.map((link) => {

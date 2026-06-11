@@ -100,21 +100,12 @@ export function GmPanel({ disabled }: GmPanelProps) {
   const paidPts = pointsForGm(true, boostActive);
 
   return (
-    <div className="flex w-full flex-col gap-4">
+    <div className="flex w-full flex-col gap-3">
       {boostActive && (
         <p className="uni-caption text-center text-[var(--uni-success)]">
           {BOOST_GM_MULTIPLIER}× Boost — GM & deploy earn double points
         </p>
       )}
-      <div className="grid grid-cols-2 gap-2">
-        <Stat label="Your GMs" value={gmCount?.toString() ?? "0"} />
-        <Stat label="Points" value={points?.toString() ?? "0"} />
-        <Stat
-          label="Free today"
-          value={`${freeLeft}/${FREE_GM_PER_DAY}`}
-        />
-        <Stat label="Per GM" value={`+${freePts} / +${paidPts}`} />
-      </div>
 
       <button
         type="button"
@@ -133,11 +124,21 @@ export function GmPanel({ disabled }: GmPanelProps) {
                 : "GM · Free"}
       </button>
 
-      <p className="uni-caption text-center">
+      <p className="uni-caption -mt-1 text-center">
         {isPaidGm
           ? `Paid GM · +${paidPts} pts`
           : `Free GM · +${freePts} pts · ${freeLeft} left today`}
       </p>
+
+      <div className="grid grid-cols-2 gap-1.5">
+        <Stat label="Your GMs" value={gmCount?.toString() ?? "0"} />
+        <Stat label="Points" value={points?.toString() ?? "0"} />
+        <Stat
+          label="Free today"
+          value={`${freeLeft}/${FREE_GM_PER_DAY}`}
+        />
+        <Stat label="Per GM" value={`+${freePts} / +${paidPts}`} />
+      </div>
 
       {writeError && (
         <p className="uni-caption text-center text-[var(--uni-critical)]">
@@ -168,9 +169,9 @@ export function GmPanel({ disabled }: GmPanelProps) {
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="uni-card-inset px-3 py-2.5">
-      <p className="uni-label">{label}</p>
-      <p className="uni-mono mt-0.5 text-lg font-semibold text-[var(--uni-text)]">
+    <div className="uni-card-inset px-2.5 py-2">
+      <p className="uni-label text-[0.6875rem]">{label}</p>
+      <p className="uni-mono mt-0.5 text-base font-semibold text-[var(--uni-text)]">
         {value}
       </p>
     </div>

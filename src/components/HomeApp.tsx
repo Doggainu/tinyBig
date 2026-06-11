@@ -54,18 +54,18 @@ export function HomeApp() {
     <>
       <AppNav />
 
-      <header className="uni-card px-5 py-5 text-center">
-        <p className="uni-eyebrow">
+      <header className="uni-card px-4 py-3 text-center">
+        <p className="uni-eyebrow text-[0.6875rem]">
           {inMiniApp ? "Farcaster" : "Web"} · Base
         </p>
-        <h1 className="uni-title mt-2 text-3xl">{APP_NAME}</h1>
-        <p className="uni-body mt-2 text-sm">
+        <h1 className="uni-title mt-1 text-2xl">{APP_NAME}</h1>
+        <p className="uni-body mt-1 text-xs leading-snug">
           GM, Boost, deploy tokens, refer friends, and earn NFT badges for the{" "}
           <span className="uni-text-accent font-semibold">tB</span> airdrop on
           Base.
         </p>
-        <div className="uni-airdrop-callout mt-4">
-          <p className="uni-airdrop-text">
+        <div className="uni-airdrop-callout mt-2 px-3 py-2">
+          <p className="uni-airdrop-text text-xs">
             More points = Bigger{" "}
             <span className="uni-text-accent font-semibold">tB</span> airdrop.
             Simple as that.
@@ -83,10 +83,10 @@ export function HomeApp() {
         </div>
       )}
 
-      <div className="uni-card px-4 py-5">
+      <div className="uni-card px-3 py-3">
         <ConnectWallet />
         {hubReady && isConnected && !wrongChain && (
-          <div className="uni-card-inset mt-2.5 flex items-center justify-between gap-2 px-3 py-2">
+          <div className="uni-card-inset mt-2 flex items-center justify-between gap-2 px-3 py-1.5">
             <p className="uni-label shrink-0 leading-none">Total points</p>
             <p className="uni-mono text-lg font-semibold leading-none uni-text-accent">
               {points?.toString() ?? "0"}
@@ -107,8 +107,8 @@ export function HomeApp() {
       )}
 
       {hubReady && isConnected && !wrongChain && (
-        <div className="uni-card p-4">
-          <div className="uni-tabs mb-4">
+        <div className="uni-card p-3">
+          <div className="uni-tabs uni-tabs-action mb-2.5">
             <div className="uni-tab-wrap">
               <button
                 type="button"
