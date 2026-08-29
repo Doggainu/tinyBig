@@ -2,10 +2,6 @@
 
 Base mini app: GM, token deploy, referral points, and milestone badge NFTs.
 
-GitHub: [Doggainu/tinyBig](https://github.com/Doggainu/tinyBig)
-
-## Setup
-
 ```bash
 npm install
 cp .env.example .env.local
